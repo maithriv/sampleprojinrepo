@@ -1,0 +1,16 @@
+		driver.get("http://www.google.com");
+
+		driver.navigate().to("http://www.amazon.com");
+		
+		//back and forward buttons simulation:
+		driver.navigate().back();
+		
+		Thread.sleep(2000);
+		
+		driver.navigate().forward();
+		
+		Thread.sleep(2000);
+
+		driver.navigate().back();
+		
+		driver.navigate().refresh();

@@ -1,0 +1,110 @@
+package demo;
+
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+	import org.openqa.selenium.Alert;
+
+	import org.openqa.selenium.WebElement;
+
+	import org.openqa.selenium.By;
+	import org.openqa.selenium.Dimension;
+	import org.openqa.selenium.WebDriver;
+	import org.openqa.selenium.chrome.ChromeDriver;
+	import org.openqa.selenium.firefox.FirefoxDriver;
+	import org.openqa.selenium.interactions.Actions;
+	import org.openqa.selenium.support.ui.Select;
+
+	public class taskNaveen {
+		
+		public static void main(String[] args) throws InterruptedException {
+			
+
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Karthik\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.zoopla.co.uk/");
+		Thread.sleep(2000);
+	//	driver.manage().window().maximize();
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//img[@src='https://m.zoocdn.com/www/_b/static/images/logo-5ead14393a.svg']")).click();
+			Thread.sleep(2000);
+			
+		//	driver.findElement(By.xpath("//a[@href='/signin/']")).click();
+			
+		//	driver.findElement(By.xpath("//*[contains(@href,'Sign in')]")).click();
+
+		//	Xpath=//*[contains(text(),'here')]
+			//Xpath=//input[@type='submit' and @name='btnLogin']
+			
+			driver.findElement(By.xpath("//input[@type='button'and @title='Agree to our use of cookies']")).click();
+			Thread.sleep(2000);
+
+					
+					driver.findElement(By.xpath("//*[contains(text(),'Find out more')]")).click();
+
+		
+		driver.findElement(By.id("search-input-location")).sendKeys("London");
+		Thread.sleep(2000);
+		
+
+		driver.findElement(By.id("search-submit")).click();		
+		Thread.sleep(2000);
+		
+
+	//List<WebElement> price = driver.findElements(By.className("listing-results-price text-price"));		
+	//List<WebElement> price= driver.findElement(By.xpath("//a[contains(class(), "listing-results-price text-price")).click();
+		
+			
+			
+		//List<WebElement> price=	driver.findElements(By.xpath("//a[contains(@class,'listing-results-price text-price']"));
+
+		Thread.sleep(2000);
+		List<WebElement> price
+		 = driver.findElements(By.xpath("//a[@class='listing-results-price text-price']"));
+		
+		//a[contains(@href,’’)]
+
+	//	List<WebElement> price = driver.findElements(By.xpath("//a[starts-with(@href,'/for-sale/details/']"));
+
+		
+	//	List<WebElement> price = driver.findElements(By.tagName("a"));
+		
+		System.out.println(price);
+
+		System.out.println(price.size());
+		
+	/*   for(WebElement link:price){
+			System.out.println(link.getText() + " - " + link.getAttribute("href"));
+			
+			*/
+		
+		for(int i=0; i<price.size();i++)
+		{
+			System.out.println(price.get(i).getText());		
+
+		}
+	   
+		Thread.sleep(2000);
+
+		driver.findElement(By.cssSelector("#listing_51058333 > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)")).click();
+
+		Thread.sleep(2000);
+
+	   String Aname = driver.findElement(By.cssSelector("div.ui-agent:nth-child(1) > a:nth-child(2) > div:nth-child(3) > h4:nth-child(1)")).getText();
+	   
+if(Aname.equals("Albert Victoria"))
+{
+	System.out.println("Pass");
+	driver.findElement(By.cssSelector("div.ui-agent:nth-child(1) > a:nth-child(2) > div:nth-child(3) > h4:nth-child(1)")).click();
+}
+
+Thread.sleep(3000);
+String Title = driver.findElement(By.cssSelector("h1.bottom-half")).getText();
+if(Title.equals("Albert Victoria"));
+System.out.println("Pass");		}
+		
+
+}

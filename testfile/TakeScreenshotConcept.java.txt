@@ -1,0 +1,7 @@
+driver.get("http://www.google.com");
+
+		// Take screenshot and store as a file format
+		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		// now copy the screenshot to desired location using copyFile //method
+		FileUtils.copyFile(src, new File("/Users/naveenkhunteta/Documents/workspace/MorningSessions/src/SeleniumSessions/google.png"));
+}

@@ -1,0 +1,8 @@
+driver.findElement(By.xpath("//input[@type='submit']")).click();
+		Thread.sleep(3000);
+		
+//By Frame name or frame index, index if only 1 or frames
+		driver.switchTo().frame("mainpanel");
+		
+		driver.findElement(By.xpath("//a[contains(text(),'Contacts')]")).click();
+		

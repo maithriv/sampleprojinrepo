@@ -1,0 +1,16 @@
+driver.get("http://www.facebook.com"); //enter URL
+		
+		
+		//1. get the total count of links on the page
+		//2. get the text of each link on the page
+		
+		//all the links are represented by <a> html tag:
+
+		List <WebElement> linkList = driver.findElements(By.tagName("a"));
+		
+		//size of linkList:
+		System.out.println(linkList.size());
+		
+		for(int i=0; i<linkList.size(); i++){
+			String linkText = linkList.get(i).getText();
+			System.out.println(linkText);

@@ -1,0 +1,22 @@
+public static void main(String[] args) throws InterruptedException {
+
+	
+	System.setProperty("webdriver.chrome.driver","C:\\Users\\Karthik\\Downloads\\chromedriver_win32\\chromedriver.exe");
+
+	//Use ChromeOptions class and create an object for chrome class
+	ChromeOptions options=new ChromeOptions();
+	options.addArguments("headless"); //Add headless aregument
+	options.addArguments("window-size-1400,800"); //some times its optional, it can be run without size settings also
+	WebDriver driver = new ChromeDriver(options); //Pass options argument
+	
+	driver.get("http://www.google.com");
+	
+	String title = driver.getTitle();
+	System.out.println(title);
+	
+	//Run the test the browser does not open but the test gets run in background
+	//Headless browser execution is faster
+	}
+	
+
+}

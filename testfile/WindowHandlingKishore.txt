@@ -1,0 +1,5 @@
+Handling windows:
+1. String myWindowHandle = driver.getWindowHandle();
+	    driver.switchTo().window(myWindowHandle);
+	    WebDriverWait wait = new WebDriverWait(driver,10000);
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[3]/div/div[6]/div[2]/div[5]/a[1]"))).click();

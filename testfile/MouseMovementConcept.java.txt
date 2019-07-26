@@ -1,0 +1,9 @@
+		driver.get("http://spicejet.com/");
+		
+		Actions action = new Actions(driver);
+		
+		action.moveToElement(driver.findElement(By.linkText("About Us"))).build().perform();
+		
+		Thread.sleep(3000);
+		
+		driver.findElement(By.linkText("Fleet")).click();
